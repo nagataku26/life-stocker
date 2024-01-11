@@ -189,6 +189,7 @@ GEM
       railties (>= 5.2)
     rexml (3.2.6)
     rubyzip (2.3.2)
+    select2-rails (4.0.13)
     selenium-webdriver (4.10.0)
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
@@ -245,6 +246,7 @@ DEPENDENCIES
   pg
   puma (~> 5.0)
   rails (~> 7.0.0)
+  select2-rails
   selenium-webdriver
   sprockets-rails
   stimulus-rails
