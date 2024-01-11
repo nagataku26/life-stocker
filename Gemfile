@@ -76,5 +76,3 @@ group :production do
 end
 
 gem "devise"
-
-gem 'select2-rails'
