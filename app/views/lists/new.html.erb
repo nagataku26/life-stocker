@@ -1,0 +1,40 @@
+<%= form_with(model: @list, local: true) do |f| %>
+
+  <div class="weight-bold-text">
+    リスト名
+    <span class="required">必須</span>
+  </div>
+  <%= f.text_area :list_name, class:"list_name", id:"list-name", placeholder:"リスト名（必須 20文字まで)", maxlength:"20" %>
+  
+  <div class="weight-bold-text">
+    パスワード
+    <span class="required">必須</span>
+  </div>
+  <%= f.password_field :password, class:"input-default", id:"password", placeholder:"4文字の半角数字" %>
+
+  <div class="field">
+    <%= f.label :selected_icon, 'Select Icon' %>
+    <%= f.select :selected_icon, List::ICONS, { prompt: 'Choose an icon' }, class: 'select2' %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      $('.select2').select2({
+        templateResult: formatIcon, // アイコンを表示するための関数
+        escapeMarkup: function (m) { return m; } // HTMLエスケープを無効にする
+      });
+
+      function formatIcon(icon) {
+        if (!icon.id) { return icon.text; }
+        const $icon = $(
+          `<img src="/assets/icons/${icon.id}" class="icon" />`
+        );
+        return $icon;
+      }
+    });
+  </script>
+<% end %>
