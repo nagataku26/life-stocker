@@ -3,7 +3,22 @@
 
 <% if user_signed_in? %>
   <%= link_to 'リスト登録', new_list_path, class: "list_btn" %>
-<%else%>
+  
+  <% current_user.lists.each do |list| %>
+    <div class='list'>
+      <%= link_to list_path(list.id) do %>
+        <div class='list_img_content'>
+          <%= image_tag list.image, class: "list_img" %>
+        </div>
+        <div class='list_info'>
+          <h3 class='list_name'>
+            <%= list.list_name %>
+          </h3>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+<% else %>
   <div class="toppage_wrap">
     <div class="catch_copy_wrap">
       <div class="catch_copy">
@@ -30,4 +45,4 @@
       </div>
     </div>
   </div>
-<%end%>
+<% end %>
