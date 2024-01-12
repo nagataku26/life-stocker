@@ -1,3 +1,12 @@
+/* ログイン時 */
+
+.list_img {
+  height: 100px;
+  
+}
+
+/* ログアウト時 */
+
 .toppage_wrap {
   display: flex;
   flex-direction: column;
