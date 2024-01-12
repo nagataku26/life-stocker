@@ -1,5 +1,17 @@
 <%= form_with(model: @list, local: true) do |f| %>
 
+ <div class="img-upload">
+    <div class="weight-bold-text">
+      リスト画像
+    </div>
+    <div class="click-upload">
+      <p>
+        クリックしてファイルをアップロード
+      </p>
+      <%= f.file_field :image, id:"item-image" %>
+    </div>
+  </div>
+
   <div class="weight-bold-text">
     リスト名
     <span class="required">必須</span>

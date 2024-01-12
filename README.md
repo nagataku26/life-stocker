@@ -15,7 +15,6 @@
 
 | Column        | Type   | Options     |
 | ------------- | ------ | ----------- |
-| selected_icon | string | null: false |
 | list_name     | string | null: false |
 | list_password | string | null: false |
 
