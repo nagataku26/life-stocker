@@ -1,0 +1,8 @@
+<%= render "shared/header" %>
+
+<h1>全アイテム一覧</h1>
+
+<% @items.each do |item| %>
+  <p><%= item.item_name %></p>
+  <!-- 他のアイテムの情報も表示する場合はここに追加 -->
+<% end %>
