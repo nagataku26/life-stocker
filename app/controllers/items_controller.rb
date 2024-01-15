@@ -8,7 +8,6 @@ class ItemsController < ApplicationController
 
   def new
     @item = Item.new
-    @today = Date.today
   end
 
   def create
@@ -18,5 +17,11 @@ class ItemsController < ApplicationController
     else
       render :new
     end
+  end
+
+  private
+
+  def item_params
+    params.require(:item).permit(:item_name, :stock_count, :stock_place, :purchase_date, :expiration_id, :expiration_date, :purchase_plan, :purchase_plan_count, :url, :memo)
   end
 end
