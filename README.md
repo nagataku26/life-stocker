@@ -44,9 +44,9 @@
 | stock_count         | string     | null: false                    |
 | stock_place         | string     |                                |
 | purchase_date       | date       |                                |
-| expiration_type     | string     | null: false                    |
+| expiration_id       | integer    | null: false                    |
 | expiration_date     | date       |                                |
-| purchase_plan       | string     |                                |
+| purchase_plan       | boolean    |                                |
 | purchase_plan_count | string     |                                |
 | url                 | string     |                                |
 | memo                | text       |                                |
@@ -54,4 +54,4 @@
 
 ## Association
 
-- belongs_to :user
+- belongs_to :list

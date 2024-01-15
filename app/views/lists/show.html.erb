@@ -13,4 +13,12 @@
       登録されているアイテム数: 
     </div>
   </div>
+
+  <%= link_to "アイテム登録", new_list_item_path(list_id: @list.id), class: "item_new_btn" %>
+    
+
+  <% @items.each do |item| %>
+    <p><%= item.item_name %></p>
+    <!-- 他のアイテムの情報も表示する場合はここに追加 -->
+  <% end %>
 </div>

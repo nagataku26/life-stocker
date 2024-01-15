@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_01_12_003056) do
+ActiveRecord::Schema[7.0].define(version: 2024_01_13_072600) do
   create_table "active_storage_attachments", charset: "utf8", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -37,6 +37,23 @@ ActiveRecord::Schema[7.0].define(version: 2024_01_12_003056) do
     t.bigint "blob_id", null: false
     t.string "variation_digest", null: false
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
+  end
+
+  create_table "items", charset: "utf8", force: :cascade do |t|
+    t.string "item_name", null: false
+    t.string "stock_count", null: false
+    t.string "stock_place"
+    t.date "purchase_date"
+    t.integer "expiration_id", null: false
+    t.date "expiration_date"
+    t.boolean "purchase_plan"
+    t.string "purchase_plan_count"
+    t.string "url"
+    t.text "memo"
+    t.bigint "list_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["list_id"], name: "index_items_on_list_id"
   end
 
   create_table "lists", charset: "utf8", force: :cascade do |t|
@@ -70,6 +87,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_01_12_003056) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "items", "lists"
   add_foreign_key "user_lists", "lists"
   add_foreign_key "user_lists", "users"
 end

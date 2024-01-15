@@ -2,6 +2,7 @@ class List < ApplicationRecord
   has_one_attached :image
   has_many :user_lists
   has_many :users, through: :user_lists
+  has_many :items
 
   with_options presence: true do
     validates :list_name
