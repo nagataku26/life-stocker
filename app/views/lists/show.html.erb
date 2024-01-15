@@ -14,7 +14,7 @@
     </div>
   </div>
 
-  <%= link_to "アイテム登録", new_item_path, class: "item_new_btn" %>
+  <%= link_to "アイテム登録", new_list_item_path(list_id: @list.id), class: "item_new_btn" %>
     
 
   <% @items.each do |item| %>

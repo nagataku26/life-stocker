@@ -3,7 +3,7 @@
 
 <% if user_signed_in? %>
   <%= link_to "リスト登録", new_list_path, class: "list_new_btn" %>
-  <%= link_to "全登録アイテム一覧", items_path, class: "all_item_list" %>
+  <%= link_to "全登録アイテム一覧", user_path(current_user), class: "all_item_list" %>
   <% @user_lists.each do |list| %>
     <div class="list">
       <%= link_to list_path(list.id) do %>

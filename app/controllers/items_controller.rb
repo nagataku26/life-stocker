@@ -1,12 +1,8 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!
 
-  def index
-    @user_lists = current_user.lists.includes(:items)
-    @items = @user_lists.flat_map(&:items)
-  end
-
   def new
+    @list = List.find(params[:list_id])
     @item = Item.new
   end
 
@@ -22,6 +18,6 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:item_name, :stock_count, :stock_place, :purchase_date, :expiration_id, :expiration_date, :purchase_plan, :purchase_plan_count, :url, :memo)
+    params.require(:item).permit(:item_name, :stock_count, :stock_place, :purchase_date, :expiration_id, :expiration_date, :purchase_plan, :purchase_plan_count, :url, :memo).merge(list_id: params[:list_id])
   end
 end
