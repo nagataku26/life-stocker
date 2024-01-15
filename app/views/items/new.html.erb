@@ -1,0 +1,56 @@
+<%= render "shared/header" %>
+
+<%= form_with(model: @item, local: true) do |f| %>
+
+ <div class="img-upload">
+    <div class="weight-bold-text">
+      アイテム画像
+    </div>
+    <div class="click-upload">
+      <p>
+        クリックしてファイルをアップロード
+      </p>
+      <%= f.file_field :image, id:"item-image" %>
+    </div>
+  </div>
+
+  <div class="weight-bold-text">
+    アイテム名
+    <span class="required">必須</span>
+  </div>
+  <%= f.text_area :item_name, class:"item_name", id:"item_name", placeholder:"アイテム名" %>
+
+  <div class="weight-bold-text">
+    ストック数
+    <span class="required">必須</span>
+  </div>
+  <%= f.text_area :stock_count, class:"stock_count", id:"stock_count", placeholder:"例:5個 1袋 など" %>
+
+  <div class="weight-bold-text">
+    保管場所
+  </div>
+  <%= f.text_area :stock_place, class:"stock_place", id:"stock_place", placeholder:"例:冷蔵庫 玄関収納 など" %>
+
+  <div class="weight-bold-text">
+    購入日、登録日
+  </div>
+  <div class='input_purchase_date'>
+      <%= raw sprintf(
+                  f.date_select(
+                    :purchase_date,
+                    class:'purchase_date',
+                    id:"purchase_date",
+                    use_month_numbers: true,
+                    prompt: "--",
+                    start_year: (Time.now.year - 10),
+                    end_year: (Time.now.year + 10),
+                    date_separator: '%s',
+                    selected: Date.current
+                    ),
+                  "<p> 年 </p>", "<p> 月 </p>") + "<p> 日 </p>" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
