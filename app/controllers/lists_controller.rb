@@ -1,9 +1,9 @@
 class ListsController < ApplicationController
-  before_action :authenticate_user!
-  before_action :list_find, only: [:show, :edit]
+  before_action :authenticate_user!, except: :index
+  before_action :list_find, only: [:show, :edit, :destroy]
 
   def index
-    @user_lists = current_user.lists
+    @list = List.all
   end
 
   def new
@@ -24,6 +24,11 @@ class ListsController < ApplicationController
   end
 
   def edit
+  end
+
+  def destroy
+    @list.destroy
+    redirect_to root_path
   end
 
   private

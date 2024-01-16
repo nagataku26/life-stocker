@@ -1,24 +1,65 @@
 <%= render "shared/header" %>
 
-<div class='list'>
-  <%= link_to "リストの編集", edit_list_path(@list.id), method: :get, class: "list_edit_btn" %>
-  <div class='list_info'>
-    <div class='list_img_content'>
-      <%= image_tag @list.image, class: "list_img" %>
+<div class='list_show'>
+  <div class='list_info_wrap'>
+    <div class="list_info_show">
+      <div class='list_img_content'>
+        <% if @list.image.attached? %>
+          <%= image_tag @list.image.variant(resize: '200x200'), class: "list_img" %>
+        <% else %>
+          <%= image_tag "noimage.jpg", class: "list_img", alt: "No Image",style: "width: 200px; height: 200px;" %>
+        <% end %>
+      </div>
+      <div class= "list_content">
+        <div class='list_name_show'>
+          <%= @list.list_name %>
+        </div>
+        <p class="item_count">
+          登録アイテム数
+          <%= @items.count %>
+        </p>
+      </div>
     </div>
-    <h3 class='list_name'>
-      <%= @list.list_name %>
-    </h3>
-    <div class="item-count">
-      登録されているアイテム数: 
-    </div>
+  </div>
+  <div class="list_btn_wrap">
+    <%= link_to "リストの編集", edit_list_path(@list.id), method: :get, class: "list_option_btn" %>
+    <%= link_to 'リストの削除', list_path(@list.id), data: { turbo_method: :delete, turbo_confirm: "本当に削除しますか？" }, class: "list_option_btn" %>
+    <%= link_to "リストの共有", root_path , class: "list_option_btn"%>
   </div>
 
   <%= link_to "アイテム登録", new_list_item_path(list_id: @list.id), class: "item_new_btn" %>
-    
 
-  <% @items.each do |item| %>
-    <p><%= item.item_name %></p>
-    <!-- 他のアイテムの情報も表示する場合はここに追加 -->
-  <% end %>
+  <div class="items_wrap">
+    <% @items.each do |item| %>
+      <div class="item">
+        <div class='item_img_content'>
+          <% if item.image.attached? %>
+            <%= image_tag item.image.variant(resize: '150x150'), class: "item_img" %>
+          <% else %>
+            <%= image_tag "noimage.jpg", class: "item_img", alt: "No Image",style: "width: 150px; height: 150px;" %>
+          <% end %>
+        </div>
+        <div class="item_info">
+          <div class="item_name_info">
+            <%= item.item_name %>
+          </div>
+          <div class="stock_count_info">
+            ストック数
+            <%= item.stock_count %>
+          </div>
+          <div class="purchase_date_info">
+            購入日、登録日
+            <%= item.purchase_date %>
+          </div>
+          <div class="expiration_date_info">
+            <%= item.expiration.name %>
+            <%= item.expiration_date %>
+          </div>
+          <div class="memo_info">
+            <%= item.memo %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>
