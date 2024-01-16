@@ -29,21 +29,36 @@
 
   <%= link_to "アイテム登録", new_list_item_path(list_id: @list.id), class: "item_new_btn" %>
 
-  <div class="items_container">
-    <% @items.each_slice(2) do |item_pair| %>
-      <div class="item_row">
-        <% item_pair.each do |item| %>
-          <div class="item">
-            <p><%= item.item_name %></p>
-            <div class='item_img_content'>
-              <% if item.image.attached? %>
-                <%= image_tag item.image.variant(resize: '150x150'), class: "item_img" %>
-              <% else %>
-                <%= image_tag "noimage.jpg", class: "item_img", alt: "No Image",style: "width: 150px; height: 150px;" %>
-              <% end %>
-            </div>
+  <div class="items_wrap">
+    <% @items.each do |item| %>
+      <div class="item">
+        <div class='item_img_content'>
+          <% if item.image.attached? %>
+            <%= image_tag item.image.variant(resize: '150x150'), class: "item_img" %>
+          <% else %>
+            <%= image_tag "noimage.jpg", class: "item_img", alt: "No Image",style: "width: 150px; height: 150px;" %>
+          <% end %>
+        </div>
+        <div class="item_info">
+          <div class="item_name_info">
+            <%= item.item_name %>
           </div>
-        <% end %>
+          <div class="stock_count_info">
+            ストック数
+            <%= item.stock_count %>
+          </div>
+          <div class="purchase_date_info">
+            購入日、登録日
+            <%= item.purchase_date %>
+          </div>
+          <div class="expiration_date_info">
+            <%= item.expiration.name %>
+            <%= item.expiration_date %>
+          </div>
+          <div class="memo_info">
+            <%= item.memo %>
+          </div>
+        </div>
       </div>
     <% end %>
   </div>
