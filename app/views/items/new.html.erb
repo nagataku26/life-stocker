@@ -32,8 +32,11 @@
   <%= f.text_field :stock_place, class:"stock_place", id:"stock_place", placeholder:"例:冷蔵庫 玄関収納 など" %>
 
   <div class="weight-bold-text">
-    購入日、登録日
+    購入日or登録日
+    <span class="required">必須</span>
   </div>
+  <%= f.collection_select(:purchase_id, Purchase.all, :id, :name, {}, {class:"purchase_select"}) %>
+
   <div class='input_purchase_date'>
       <%= raw sprintf(
                   f.date_select(
@@ -56,9 +59,6 @@
   </div>
   <%= f.collection_select(:expiration_id, Expiration.all, :id, :name, {}, {class:"expiration_select"}) %>
 
-  <div class="weight-bold-text">
-    期限日
-  </div>
   <div class='input_expiration_date'>
       <%= raw sprintf(
                   f.date_select(

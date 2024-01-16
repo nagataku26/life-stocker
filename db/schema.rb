@@ -43,7 +43,8 @@ ActiveRecord::Schema[7.0].define(version: 2024_01_13_072600) do
     t.string "item_name", null: false
     t.string "stock_count", null: false
     t.string "stock_place"
-    t.date "purchase_date"
+    t.integer "purchase_id", null: false
+    t.date "purchase_date", null: false
     t.integer "expiration_id", null: false
     t.date "expiration_date"
     t.boolean "purchase_plan"

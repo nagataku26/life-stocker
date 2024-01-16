@@ -43,6 +43,7 @@
 | item_name           | string     | null: false                    |
 | stock_count         | string     | null: false                    |
 | stock_place         | string     |                                |
+| purchase_id         | integer    | null:false                     |
 | purchase_date       | date       |                                |
 | expiration_id       | integer    | null: false                    |
 | expiration_date     | date       |                                |

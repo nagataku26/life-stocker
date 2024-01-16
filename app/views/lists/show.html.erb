@@ -44,20 +44,37 @@
             <%= item.item_name %>
           </div>
           <div class="stock_count_info">
-            ストック数
+            ストック数:
             <%= item.stock_count %>
           </div>
+          <% if item.memo.present? %>
+            <div class="stock_place_info">
+              保管場所:
+              <%= item.stock_place %>
+            </div>
+          <% end %>
           <div class="purchase_date_info">
-            購入日、登録日
+            <%= item.purchase.name %>:
             <%= item.purchase_date %>
           </div>
           <div class="expiration_date_info">
             <%= item.expiration.name %>
+            <% if item.expiration_date.present? %>
+            :
+            <% end %>
             <%= item.expiration_date %>
           </div>
-          <div class="memo_info">
-            <%= item.memo %>
-          </div>
+          <% if item.memo.present? %>
+            <div class="memo_info">
+              メモ:
+              <%= item.memo %>
+            </div>
+          <% end %>
+          <% if item.url.present? %>
+            <div class="url_info">
+              <%= link_to '保存しているURLページへ', item.url, target: '_blank', class: 'item_url_btn' %>
+            </div>
+          <% end %>
         </div>
       </div>
     <% end %>

@@ -89,6 +89,8 @@
 
 .item {
   width: calc((100% - 400px) / 2);
+  height: 220px;
+  min-width: 515px;
   margin: 20px 20px;
   display: flex;
   align-items: center;
@@ -111,6 +113,20 @@
   margin-left: 10px;
   font-size: 20px;
   font-weight: 700;
+}
+
+.url_info {
+  height: 30px;
+  width: 280px;
+  background-color: lightblue;
+  display: flex;
+  justify-content: center;
+  border-radius: 10px;
+}
+
+.item_url_btn {
+  text-decoration: none;
+  color: black;
 }
 
 
