@@ -4,12 +4,14 @@
 <% if user_signed_in? %>
   <%= link_to "リスト登録", new_list_path, class: "list_new_btn" %>
   <%= link_to "全登録アイテム一覧", user_path(current_user), class: "all_item_list" %>
-  <% @user_lists.each do |list| %>
+  <% current_user.lists.each do |list| %>
     <div class="list">
       <%= link_to list_path(list.id) do %>
-        <div class="list_img_content">
-          <%= image_tag list.image, class: "list_img" %>
-        </div>
+        <% if list.image.attached? %>
+          <%= image_tag list.image.variant(resize: '150x150'), class: "list_img" %>
+        <% else %>
+          <%= image_tag "noimage.jpg", class: "list_img", alt: "No Image",style: "width: 150px; height: 150px;" %>
+        <% end %>
         <div class="list_info">
           <h3 class="list_name">
             <%= list.list_name %>
