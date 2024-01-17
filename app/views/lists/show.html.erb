@@ -34,6 +34,11 @@
       <% @items.each do |item| %>
         <div class="item">
           <div class='item_img_content'>
+            <% if item.expired? %>
+              <div class="expired_alert">
+                期限切れ
+              </div>
+            <% end %>
             <% if item.image.attached? %>
               <%= image_tag item.image.variant(resize: '150x150'), class: "item_img" %>
             <% else %>

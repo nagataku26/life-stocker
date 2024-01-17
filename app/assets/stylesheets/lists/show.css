@@ -102,11 +102,23 @@
   display: flex;
   justify-content: center;
   margin-left: 20px;
+  position: relative;
 }
 
 .item_img {
   max-width: 150px;
   border-radius: 10px;
+}
+
+.expired_alert {
+  position: absolute;
+  top: 40%;
+  width: 100%;
+  text-align: center;
+  background-color: red;
+  transform: skewY(-15deg);
+  font-size: 30px;
+  font-weight: 500;
 }
 
 .item_info {

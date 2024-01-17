@@ -20,7 +20,7 @@ class ListsController < ApplicationController
   end
 
   def show
-    @items = @list.items
+    @items = @list.items.order(Arel.sql('expiration_date IS NULL, expiration_date ASC'))
   end
 
   def edit
