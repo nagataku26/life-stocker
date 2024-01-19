@@ -33,8 +33,12 @@
 }
 
 .list_name_show {
+  max-width: 500px;
   font-size: 70px;
   text-align: center;
+  white-space: nowrap;
+  overflow: hidden; 
+  text-overflow: ellipsis;
 }
 
 .item_count {
