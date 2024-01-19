@@ -102,6 +102,9 @@
 
 .list_name_index {
   font-size: 50px;
+  white-space: nowrap;
+  overflow: hidden; 
+  text-overflow: ellipsis;
 }
 /* ログアウト時 */
 

@@ -6,7 +6,7 @@ class User < ApplicationRecord
   
   has_many :user_lists, dependent: :destroy
   has_many :lists, through: :user_lists
-  has_many :items, through: :lists
+  has_many :items, through: :lists, dependent: :destroy
 
   validates :nickname, presence: true
 
@@ -14,7 +14,6 @@ class User < ApplicationRecord
 
   private
   def create_initial_lists
-    disaster_prevention_list = lists.create(list_name: "防災グッズリスト", list_password: "0000")
-    purchase_list = lists.create(list_name: "買い物予定リスト", list_password: "0000")
+      disaster_prevention_list = lists.create(list_name: "防災グッズ", list_password: "0000")
   end
 end

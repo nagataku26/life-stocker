@@ -11,4 +11,8 @@ class Item < ApplicationRecord
     validates :expiration_id
     validates :purchase_id
   end
+  
+  def expired?
+    expiration_date.present? && expiration_date < Date.current
+  end
 end
