@@ -5,7 +5,10 @@
   <div class="background">
     <div class= "top_page">
       <%= link_to "リスト登録", new_list_path, class: "list_new_btn" %>
-      <%= link_to "全アイテムリスト", user_path(current_user), class: "all_item_list_btn" %>
+      <div class="lists_btn_wrap">
+        <%= link_to "全アイテム一覧", all_items_user_path(current_user), class: "user_list_btn" %>
+        <%= link_to "買い物予定リスト", purchase_plan_user_path(current_user), class: "user_list_btn" %>
+      </div>
       <div class="list_index_wrap">
         <% current_user.lists.each do |list| %>
           <div class="list_index">
