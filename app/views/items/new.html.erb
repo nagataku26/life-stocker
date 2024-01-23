@@ -1,7 +1,7 @@
 <%= render "shared/header" %>
 
 <div class="background_item_new">
-  <%= form_with(model: [@list, @item], class: 'registration_main', local: true) do |f| %>
+  <%= form_with(model: [@list, @item], class: 'item_new_form', local: true) do |f| %>
     <div class="form_header">
       アイテム登録
     </div>
@@ -9,7 +9,6 @@
       <div class="img_upload">
         <div class="form_text">
           アイテム画像
-        </div>
         <div class="click-upload">
           <div>
             クリックしてファイルをアップロード
