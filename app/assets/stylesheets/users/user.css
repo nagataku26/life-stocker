@@ -17,7 +17,7 @@
   margin: auto;
   padding: 20px 0;
   border-radius: 10px;
-  height: 440px;
+  height: auto;
 }
 
 .register_btn {
@@ -26,6 +26,7 @@
 }
 
 /* サインイン */
+
 .user_signin_form {
   width: 500px;
   background-color: white;
@@ -36,5 +37,36 @@
   margin: auto;
   padding: 20px 0;
   border-radius: 10px;
-  height: 350px;
+  height: auto;
+}
+
+/* 編集画面 */
+.user_edit_form {
+  width: 500px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  padding: 20px 0;
+  border-radius: 10px;
+  height: auto;
+}
+
+.acount_delete {
+  font-weight: bold;
+  margin-top: 30px;
+  font-size: 20px;
+  border-top: solid 2px lightgray;
+}
+
+.acount_delete_btn {
+  background-color: red;
+  color: yellow;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 5px;
+  border: 1px solid red;
+}
+
+.edit_form_wrap {
 }
