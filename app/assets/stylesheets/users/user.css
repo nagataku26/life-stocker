@@ -1,0 +1,40 @@
+.background_user_page {
+  background-color: lavender;
+  display: flex;
+  justify-content: center;
+  min-height: calc(100vh - 100px);
+}
+
+/* サインアップ */
+
+.user_new_form {
+  width: 500px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: auto;
+  padding: 20px 0;
+  border-radius: 10px;
+  height: 440px;
+}
+
+.register_btn {
+  width: 100%;
+  margin: 20px 0;
+}
+
+/* サインイン */
+.user_signin_form {
+  width: 500px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: auto;
+  padding: 20px 0;
+  border-radius: 10px;
+  height: 350px;
+}
