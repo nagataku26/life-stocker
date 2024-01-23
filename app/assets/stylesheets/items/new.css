@@ -3,7 +3,7 @@
   display: flex;
   justify-content: center;
 }
-.registration_main {
+.item_new_form {
   width: 500px;
   background-color: white;
   display: flex;
@@ -42,5 +42,10 @@
 }
 
 .item_name {
-  width: 181px;
+  width: 178px;
+}
+
+.form_input {
+  margin-left: 20px;
+
 }
