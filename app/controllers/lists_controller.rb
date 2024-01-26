@@ -1,6 +1,6 @@
 class ListsController < ApplicationController
   before_action :authenticate_user!, except: :index
-  before_action :list_find, only: [:show, :edit, :destroy]
+  before_action :list_find, only: [:show, :edit, :update, :destroy]
 
   def index
     @list = List.all
@@ -24,6 +24,11 @@ class ListsController < ApplicationController
   end
 
   def edit
+  end
+
+  def update
+    @list.update(list_params)
+    redirect_to edit_list_path(@list.id)
   end
 
   def destroy
