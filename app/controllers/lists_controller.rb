@@ -27,8 +27,13 @@ class ListsController < ApplicationController
   end
 
   def update
-    @list.update(list_params)
-    redirect_to edit_list_path(@list.id)
+    if
+      @list.update(list_params)
+      redirect_to list_path(@list.id)
+    else
+      render :edit, status: :unprocessable_entity
+    end
+    
   end
 
   def destroy
