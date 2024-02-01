@@ -1,0 +1,19 @@
+.background_list_new {
+  background-color: lavender;
+  display: flex;
+  justify-content: center;
+  min-height: calc(100vh - 100px);
+}
+
+.list_new_form {
+  height: 400px;
+  width: 500px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: auto;
+  padding: 20px 0;
+  border-radius: 10px;
+}
