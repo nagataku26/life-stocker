@@ -1,0 +1,23 @@
+.background_list_edit {
+  background-color: lavender;
+  display: flex;
+  justify-content: center;
+  min-height: calc(100vh - 100px);
+}
+
+.list_edit_form {
+  height: 400px;
+  width: 500px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: auto;
+  padding: 20px 0;
+  border-radius: 10px;
+}
+
+.list_edit_form_wrap {
+  margin-left: 100px;
+}
