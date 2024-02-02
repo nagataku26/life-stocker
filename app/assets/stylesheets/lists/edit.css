@@ -1,11 +1,11 @@
-.background_list_new {
+.background_list_edit {
   background-color: lavender;
   display: flex;
   justify-content: center;
   min-height: calc(100vh - 100px);
 }
 
-.list_new_form {
+.list_edit_form {
   height: 400px;
   width: 500px;
   background-color: white;
@@ -18,6 +18,6 @@
   border-radius: 10px;
 }
 
-.list_new_form_wrap {
+.list_edit_form_wrap {
   margin-left: 100px;
 }

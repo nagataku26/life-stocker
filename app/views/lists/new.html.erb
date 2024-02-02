@@ -2,27 +2,28 @@
 
 <div class="background_list_new">
   <%= form_with(model: @list, class: 'list_new_form', local: true) do |f| %>
-  <div class="form_header">
-    リスト登録
-  </div>
-  <div class="form_wrap">
-    <div class="img-upload">
-      <div class="form_text">
-        リスト画像
-      </div>
-      <div class="click-upload">
-        <div>
-          クリックしてファイルをアップロード
-        </div>
-        <%= f.file_field :image, id:"list-image" %>
-      </div>
+    <div class="form_header">
+      リスト登録
     </div>
+    <div class="list_new_form_wrap">
+      <div class="img-upload">
+        <div class="form_text">
+          リスト画像
+        </div>
+        <div class="click-upload">
+          <div>
+            クリックしてファイルをアップロード
+          </div>
+          <%= f.file_field :image, id:"list-image" %>
+        </div>
+      </div>
 
       <div class="form_text">
         リスト名
         <span class="required">必須</span>
       </div>
       <%= f.text_area :list_name, class:"list_name", id:"list_name", placeholder:"リスト名（10文字まで)", maxlength:"10" %>
+      
       <div class="form_text">
         パスワード
         <span class="required">必須</span>
