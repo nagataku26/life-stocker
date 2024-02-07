@@ -53,3 +53,23 @@
   justify-content: center;
   border-radius: 10px;
 }
+
+.item_btn_wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.item_option_btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  width: 150px;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0 12px;
+  background-color: rgb(22, 227, 241);
+  color: black;
+  border-radius: 10px;
+}
