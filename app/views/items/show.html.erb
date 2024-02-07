@@ -1,0 +1,73 @@
+<%= render "shared/header" %>
+
+<div class="background_item_show">
+  <div class="item_header_show">
+    <div class="item_img_wrap">
+      <% if @item.expired? %>
+        <div class="expired_alert">
+          期限切れ
+        </div>
+      <% end %>
+      <% if @item.image.attached? %>
+        <%= image_tag @item.image.variant(resize: '150x150'), class: "item_img_show" %>
+      <% else %>
+        <%= image_tag "noimage.jpg", class: "list_img_show", alt: "No Image",style: "width: 150px; height: 150px;" %>
+      <% end %>
+    </div>
+    <div class="item_info">
+      <div class="item_name_show">
+        <%= @item.item_name %>
+      </div>
+    </div>
+  </div>
+  <div class="item_info_wrap_show">
+    <div class="item_info_show">
+      <div class="item_info_show_content">
+        ストック数:
+        <%= @item.stock_count %>
+      </div>
+      <div class="item_info_show_content">
+        <% if @item.stock_place.present? %>
+          保管場所:
+          <%= @item.stock_place %>
+        <% else %>
+          保管場所:登録なし
+        <% end %>
+      </div>
+      <div class="item_info_show_content">
+        <%= @item.purchase.name %>:
+        <%= @item.purchase_date %>
+      </div>
+      <div class="item_info_show_content">
+        <%= @item.expiration.name %>
+        <% if @item.expiration_date.present? %>
+          :
+          <%= @item.expiration_date %>      
+        <% end %>
+      </div>
+      <div class= "item_info_show_content">
+        <% if @item.purchase_plan %>
+          購入予定数:
+          <%= @item.purchase_plan_count %>
+        <% else %>
+          購入予定なし
+        <% end %>
+      </div>
+      <div class="item_info_show_content">
+        <% if @item.memo.present? %>
+          メモ:
+          <%= @item.memo %>
+        <% else %>
+          メモ登録なし
+        <% end %>
+      </div>
+      <div class="item_info_show_content">
+        <% if @item.url.present? %>
+          <%= link_to '保存しているURLページへ', @item.url, target: '_blank', class: 'item_url_btn_show' %>
+        <% else %>
+          URLの保存なし
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
