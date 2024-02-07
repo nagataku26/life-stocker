@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!
+  before_action :item_find, only: [:show, :destroy]
 
   def new
     @list = List.find(params[:list_id])
@@ -16,13 +17,27 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @item = Item.find(params[:list_id])
+  end
+
+  def edit
+  end
+
+  def update
+  end
+
+  def destroy
+    @item.destroy
+    redirect_to list_path(@item.list)
   end
 
   private
 
   def item_params
     params.require(:item).permit(:item_name, :stock_count, :stock_place, :purchase_id, :purchase_date, :expiration_id, :expiration_date, :purchase_plan, :purchase_plan_count, :url, :memo, :image).merge(list_id: params[:list_id])
+  end
+
+  def item_find
+    @item = Item.find(params[:list_id])
   end
   
 end
