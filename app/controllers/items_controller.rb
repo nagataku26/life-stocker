@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!
-  before_action :item_find, only: [:show, :destroy]
+  before_action :item_find, only: [:show, :edit, :update, :destroy]
 
   def new
     @list = List.find(params[:list_id])
@@ -23,6 +23,12 @@ class ItemsController < ApplicationController
   end
 
   def update
+    if
+      @item.update(item_params)
+      redirect_to list_item_path(item.id)
+    else
+      render :edit, status: :unprocessable_entity
+    end
   end
 
   def destroy
