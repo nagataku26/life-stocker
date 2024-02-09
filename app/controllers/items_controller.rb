@@ -1,14 +1,14 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!
-  before_action :item_find, only: [:show, :destroy]
+  before_action :list_find
+  before_action :item_find, only: [:show, :edit, :update, :destroy]
 
   def new
-    @list = List.find(params[:list_id])
-    @item = Item.new
+    @item = @list.items.build
   end
 
   def create
-    @item = Item.new(item_params)
+    @item = @list.item.build(item_params)
     if @item.save
       redirect_to list_path(@item.list), notice: 'アイテムが登録されました'
     else
@@ -23,6 +23,12 @@ class ItemsController < ApplicationController
   end
 
   def update
+    if
+      @item.update(item_params)
+      redirect_to list_item_path(@list, @item)
+    else
+      render :edit, status: :unprocessable_entity
+    end
   end
 
   def destroy
@@ -33,11 +39,15 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:item_name, :stock_count, :stock_place, :purchase_id, :purchase_date, :expiration_id, :expiration_date, :purchase_plan, :purchase_plan_count, :url, :memo, :image).merge(list_id: params[:list_id])
+    params.require(:item).permit(:item_name, :stock_count, :stock_place, :purchase_id, :purchase_date, :expiration_id, :expiration_date, :purchase_plan, :purchase_plan_count, :url, :memo, :image)
+  end
+
+  def list_find
+    @list = List.find(params[:list_id])
   end
 
   def item_find
-    @item = Item.find(params[:list_id])
+    @item = @list.items.find(params[:id])
   end
   
 end

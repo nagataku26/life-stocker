@@ -32,7 +32,7 @@
 
     <div class="items_wrap">
       <% @items.each do |item| %>
-        <%= link_to list_item_path(item.id), class: "item_link" do %>
+        <%= link_to list_item_path(@list, item), class: "item_link" do %>
           <div class="item">
             <div class='item_img_content'>
               <% if item.expired? %>

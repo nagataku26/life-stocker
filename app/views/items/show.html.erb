@@ -21,8 +21,8 @@
     </div>
   </div>
   <div class="item_btn_wrap">
-    <%= link_to "アイテムの編集", edit_list_item_path(@item.id), method: :get, class: "item_option_btn" %>
-    <%= link_to 'アイテムの削除', list_item_path(@item.id), data: { turbo_method: :delete, turbo_confirm: "本当に削除しますか？" }, class: "item_option_btn" %>
+    <%= link_to "アイテムの編集", edit_list_item_path(@list, @item), method: :get, class: "item_option_btn" %>
+    <%= link_to 'アイテムの削除', list_item_path(@list, @item), data: { turbo_method: :delete, turbo_confirm: "本当に削除しますか？" }, class: "item_option_btn" %>
     <%= link_to 'リストへ戻る', list_path(@item.list), class: "item_option_btn" %>
   </div>
   <div class="item_info_wrap_show">
