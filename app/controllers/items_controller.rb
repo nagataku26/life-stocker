@@ -4,11 +4,11 @@ class ItemsController < ApplicationController
   before_action :item_find, only: [:show, :edit, :update, :destroy]
 
   def new
-    @item = @list.items.build
+    @item = @list.items.new
   end
 
   def create
-    @item = @list.item.build(item_params)
+    @item = @list.items.new(item_params)
     if @item.save
       redirect_to list_path(@item.list), notice: 'アイテムが登録されました'
     else
