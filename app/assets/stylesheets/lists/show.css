@@ -24,7 +24,7 @@
   font-weight: 700;
 }
 
-.list_content {
+.list_content_show {
   width: 350px;
 }
 
@@ -45,6 +45,10 @@
 
 .item_count {
   font-size: 20px;
+  text-align: center;
+}
+
+.list_id {
   text-align: center;
 }
 
