@@ -25,10 +25,15 @@
       <%= f.text_area :list_name, class:"list_name", id:"list_name", placeholder:"リスト名（10文字まで)", maxlength:"10" %>
       
       <div class="form_text">
-        パスワード
-        <span class="required">必須</span>
+        共有用ID<br>(他のユーザーに共有する場合は設定してください。<br>後から設定も可能です。)
       </div>
-      <%= f.password_field :list_password, class:"list_password", id:"list_password", placeholder:"4文字の半角数字" %>
+      <%= f.text_area :shared_id, class:"shared_id", id:"shared_id", placeholder:"4文字以上10文字までの半角英数", maxlength:"10" %>
+
+
+      <div class="form_text">
+        共有用パスワード<br>(他のユーザーに共有する場合は設定してください。<br>後から設定も可能です。)
+      </div>
+      <%= f.password_field :shared_password, class:"shared_password", id:"shared_password", placeholder:"4文字の半角数字" %>
 
       <div class="actions">
         <%= f.submit"リスト編集" %>
