@@ -10,6 +10,10 @@ Rails.application.routes.draw do
   end
 
   resources :lists do
+    collection do
+      get "join"
+      post "join_list"
+    end
     resources :items, only: [:new, :create, :show, :edit, :update, :destroy]
   end
 end
