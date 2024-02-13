@@ -15,17 +15,32 @@
           <div class='list_name_show'>
             <%= @list.list_name %>
           </div>
-          <p class="item_count">
-            登録アイテム数
+          <div class="item_count">
+            登録アイテム数:
             <%= @items.count %>
-          </p>
+          </div>
+          <div class="list_shared_id">
+            <% if @list.shared_id.present? %>
+              共有用ID:
+              <%= @list.shared_id %>
+            <% else %>
+              共有用ID:未設定
+            <% end %>
+            <br>
+            <% if @list.shared_password.present? %>
+              共有用パスワード:
+              <%= @list.shared_password %>
+            <% else %>
+              共有用パスワード:未設定
+            <% end %>
+          </div>
+
         </div>
       </div>
     </div>
     <div class="list_btn_wrap">
       <%= link_to "リストの編集", edit_list_path(@list.id), method: :get, class: "list_option_btn" %>
       <%= link_to 'リストの削除', list_path(@list.id), data: { turbo_method: :delete, turbo_confirm: "本当に削除しますか？" }, class: "list_option_btn" %>
-      <%= link_to "リストの共有", root_path , class: "list_option_btn"%>
     </div>
 
     <%= link_to "アイテム登録", new_list_item_path(list_id: @list.id), class: "item_new_btn" %>

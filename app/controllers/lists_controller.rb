@@ -44,7 +44,7 @@ class ListsController < ApplicationController
   private
 
   def list_params
-    params.require(:list).permit(:list_name, :list_password, :image).merge(user_ids: [current_user.id])
+    params.require(:list).permit(:list_name, :shared_id, :shared_password, :image).merge(user_ids: [current_user.id])
   end
 
   def list_find

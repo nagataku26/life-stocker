@@ -6,7 +6,7 @@
 }
 
 .list_new_form {
-  height: 400px;
+  height: 600px;
   width: 500px;
   background-color: white;
   display: flex;
@@ -19,5 +19,5 @@
 }
 
 .list_new_form_wrap {
-  margin-left: 100px;
+  margin-left: 40px;
 }

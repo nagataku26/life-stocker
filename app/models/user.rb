@@ -14,6 +14,6 @@ class User < ApplicationRecord
 
   private
   def create_initial_lists
-      disaster_prevention_list = lists.create(list_name: "防災グッズ", list_password: "0000")
+      disaster_prevention_list = lists.create(list_name: "防災グッズ")
   end
 end
