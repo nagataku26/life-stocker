@@ -13,10 +13,11 @@
 
 ## listsテーブル
 
-| Column        | Type   | Options     |
-| ------------- | ------ | ----------- |
-| list_name     | string | null: false |
-| list_password | string | null: false |
+| Column          | Type   | Options     |
+| --------------- | ------ | ----------- |
+| list_name       | string | null: false |
+| shared_id       | string |             |
+| shared_password | string |             |
 
 ## Association
 
