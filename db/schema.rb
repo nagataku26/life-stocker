@@ -59,7 +59,8 @@ ActiveRecord::Schema[7.0].define(version: 2024_01_13_072600) do
 
   create_table "lists", charset: "utf8", force: :cascade do |t|
     t.string "list_name", null: false
-    t.string "list_password", null: false
+    t.string "shared_id"
+    t.string "shared_password"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
