@@ -1,0 +1,25 @@
+.background_list_join {
+  background-color: lavender;
+  display: flex;
+  justify-content: center;
+  min-height: calc(100vh - 100px);
+}
+
+.list_join_form {
+  height: 350px;
+  width: 500px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: auto;
+  padding: 20px 0;
+  border-radius: 10px;
+}
+
+.list_join_description {
+  text-align: center;
+  font-weight: bold;
+  margin-top: 20px;
+}

@@ -1,13 +1,28 @@
 <%= render "shared/header" %>
 
-<%= form_with(url: join_list_lists_path, method: :post) do |f| %>
-  <div>
-    <%= f.label :shared_id %>
+<div class="background_list_join">
+  <%= form_with(url: join_list_lists_path, class: "list_join_form", method: :post) do |f| %>
+    <div class="form_header">
+      リスト参加
+    </div>
+    <div class="list_join_description">
+      ご家族などの他の方が作成したリストに参加するには、<br>
+      共有してもらうリストの共有用IDと共有用パスワードを<br>
+      下記にご入力ください。
+    </div>
+
+    <div class="form_text">
+      共有用ID(4桁〜10桁の半角英数)
+    </div>
+
     <%= f.text_field :shared_id %>
-  </div>
-  <div>
-    <%= f.label :shared_password %>
+    <div class="form_text">
+      共有用パスワード(4桁の半角数字)
+    </div>
     <%= f.password_field :shared_password %>
-  </div>
-  <%= f.submit 'Join List' %>
-<% end %>
+
+    <div class="actions">
+      <%= f.submit 'リストに参加' %>
+    </div>
+  <% end %>
+</div>
