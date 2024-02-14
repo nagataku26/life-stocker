@@ -1,0 +1,13 @@
+<%= render "shared/header" %>
+
+<%= form_with(url: join_list_lists_path, method: :post) do |f| %>
+  <div>
+    <%= f.label :shared_id %>
+    <%= f.text_field :shared_id %>
+  </div>
+  <div>
+    <%= f.label :shared_password %>
+    <%= f.password_field :shared_password %>
+  </div>
+  <%= f.submit 'Join List' %>
+<% end %>

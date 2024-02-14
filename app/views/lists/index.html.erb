@@ -5,7 +5,7 @@
     <div class= "top_page">
       <div class="list_new_join_btn_wrap">
         <%= link_to "リスト登録", new_list_path, class: "list_new_join_btn" %>
-        <%= link_to "リスト参加", "#", class: "list_new_join_btn" %>
+        <%= link_to "リスト参加", join_lists_path, class: "list_new_join_btn" %>
       </div>
       <div class="lists_btn_wrap">
         <%= link_to "全アイテム一覧", all_items_user_path(current_user), class: "user_list_btn" %>

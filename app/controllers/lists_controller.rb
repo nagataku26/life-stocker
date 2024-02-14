@@ -41,6 +41,28 @@ class ListsController < ApplicationController
     redirect_to root_path
   end
 
+  def join
+    @list = List.new
+  end
+
+  def join_list
+    @user = current_user
+    @list = List.find_by(shared_id: params[:shared_id], shared_password: params[:shared_password])
+    if @list
+      if current_user.lists.include?(@list)
+        flash.now[:alert] = "既にリストに参加しています。"
+        render :join
+      else
+        @user.user_lists.create(list: @list)
+        redirect_to @list
+      end
+    else
+      flash.now[:alert] = "共有IDまたは共有パスワードが正しくありません"
+      render :join
+    end
+  end
+
+
   private
 
   def list_params
@@ -48,7 +70,7 @@ class ListsController < ApplicationController
   end
 
   def list_find
-    @list = current_user.lists.find(params[:id])
+    @list = List.find(params[:id])
   end
 
 end
