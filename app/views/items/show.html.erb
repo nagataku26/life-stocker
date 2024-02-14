@@ -2,14 +2,14 @@
 
 <div class="background_item_show">
   <div class="item_header_show">
-    <div class="item_img_wrap">
+    <div class="item_img_content">
       <% if @item.expired? %>
         <div class="expired_alert">
           期限切れ
         </div>
       <% end %>
       <% if @item.image.attached? %>
-        <%= image_tag @item.image.variant(resize: '150x150'), class: "item_img_show" %>
+        <%= image_tag @item.image.variant(resize: '150x150'), class: "item_img" %>
       <% else %>
         <%= image_tag "noimage.jpg", class: "list_img_show", alt: "No Image",style: "width: 150px; height: 150px;" %>
       <% end %>
