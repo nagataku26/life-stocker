@@ -51,14 +51,15 @@ class ListsController < ApplicationController
     if @list
       if current_user.lists.include?(@list)
         flash.now[:alert] = "既にリストに参加しています。"
-        render :join
+        render :join, status: :unprocessable_entity
       else
         @user.user_lists.create(list: @list)
         redirect_to @list
       end
     else
+      flash[:alert] = "共有IDまたは共有パスワードが正しくありません"
       flash.now[:alert] = "共有IDまたは共有パスワードが正しくありません"
-      render :join
+      render :join, status: :unprocessable_entity
     end
   end
 

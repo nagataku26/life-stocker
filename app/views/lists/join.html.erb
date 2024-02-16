@@ -5,6 +5,11 @@
     <div class="form_header">
       リスト参加
     </div>
+    <% if flash.now[:alert].present? %>
+      <div class="alert alert-danger">
+      <%= flash.now[:alert] %>
+      </div>
+    <% end %>
     <div class="list_join_description">
       ご家族などの他の方が作成したリストに参加するには、<br>
       共有してもらうリストの共有用IDと共有用パスワードを<br>
