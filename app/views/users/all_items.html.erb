@@ -5,59 +5,60 @@
 
   <div class="items_wrap">
     <% @items.each do |item| %>
-      <div class="item">
-        
-        <div class='item_img_content'>
-          <% if item.expired? %>
-            <div class="expired_alert">
-              期限切れ
-            </div>
-          <% end %>
-          <% if item.image.attached? %>
-            <%= image_tag item.image.variant(resize: '150x150'), class: "item_img" %>
-          <% else %>
-            <%= image_tag "noimage.jpg", class: "item_img", alt: "No Image",style: "width: 150px; height: 150px;" %>
-          <% end %>
-        </div>
-        <div class="item_info">
-          <div class="item_name_info">
-            <%= item.list.list_name %>:
-            <%= item.item_name %>
-          </div>
-          <div class="stock_count_info">
-            ストック数:
-            <%= item.stock_count %>
-          </div>
-          <% if item.memo.present? %>
-            <div class="stock_place_info">
-              保管場所:
-              <%= item.stock_place %>
-            </div>
-          <% end %>
-          <div class="purchase_date_info">
-            <%= item.purchase.name %>:
-            <%= item.purchase_date %>
-          </div>
-          <div class="expiration_date_info">
-            <%= item.expiration.name %>
-            <% if item.expiration_date.present? %>
-            :
+      <%= link_to list_item_path(item.list, item), class: "item_link" do %>
+        <div class="item">
+          <div class='item_img_content'>
+            <% if item.expired? %>
+              <div class="expired_alert">
+                期限切れ
+              </div>
             <% end %>
-            <%= item.expiration_date %>
+            <% if item.image.attached? %>
+              <%= image_tag item.image.variant(resize: '150x150'), class: "item_img" %>
+            <% else %>
+              <%= image_tag "noimage.jpg", class: "item_img", alt: "No Image",style: "width: 150px; height: 150px;" %>
+            <% end %>
           </div>
-          <% if item.memo.present? %>
-            <div class="memo_info">
-              メモ:
-              <%= item.memo %>
+          <div class="item_info">
+            <div class="item_name_info">
+              <%= item.list.list_name %>:
+              <%= item.item_name %>
             </div>
-          <% end %>
-          <% if item.url.present? %>
-            <div class="url_info">
-              <%= link_to '保存しているURLページへ', item.url, target: '_blank', class: 'item_url_btn' %>
+            <div class="stock_count_info">
+              ストック数:
+              <%= item.stock_count %>
             </div>
-          <% end %>
+            <% if item.memo.present? %>
+              <div class="stock_place_info">
+                保管場所:
+                <%= item.stock_place %>
+              </div>
+            <% end %>
+            <div class="purchase_date_info">
+              <%= item.purchase.name %>:
+              <%= item.purchase_date %>
+            </div>
+            <div class="expiration_date_info">
+              <%= item.expiration.name %>
+              <% if item.expiration_date.present? %>
+              :
+              <% end %>
+              <%= item.expiration_date %>
+            </div>
+            <% if item.memo.present? %>
+              <div class="memo_info">
+                メモ:
+                <%= item.memo %>
+              </div>
+            <% end %>
+            <% if item.url.present? %>
+              <div class="url_info">
+                <%= link_to '保存しているURLページへ', item.url, target: '_blank', class: 'item_url_btn' %>
+              </div>
+            <% end %>
+          </div>
         </div>
-      </div>
+      <% end %>
     <% end %>
   </div>
 </div>
