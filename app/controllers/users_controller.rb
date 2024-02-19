@@ -7,7 +7,7 @@ class UsersController < ApplicationController
 
   def purchase_plan
     @user = current_user
-    @items = @user.items.where(purchase_plan: true)
+    @items = @user.items.where(purchase_plan: true).order(Arel.sql('expiration_date IS NULL, expiration_date ASC'))
   end
 
 
