@@ -9,7 +9,7 @@
       </div>
       <div class="lists_btn_wrap">
         <%= link_to "全アイテム一覧", all_items_user_path(current_user), class: "user_list_btn" %>
-        <%= link_to "買い物予定リスト", purchase_plan_user_path(current_user), class: "user_list_btn" %>
+        <%= link_to "購入予定一覧", purchase_plan_user_path(current_user), class: "user_list_btn" %>
       </div>
       <div class="list_index_wrap">
         <% current_user.lists.each do |list| %>
