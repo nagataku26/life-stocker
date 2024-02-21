@@ -1,6 +1,7 @@
 class ListsController < ApplicationController
   before_action :authenticate_user!, except: :index
   before_action :list_find, only: [:show, :edit, :update, :destroy]
+  before_action :user_id_verification, only: [:show, :edit, :destroy]
 
   def index
     @list = List.all
@@ -72,6 +73,12 @@ class ListsController < ApplicationController
 
   def list_find
     @list = List.find(params[:id])
+  end
+
+  def user_id_verification
+    unless @list.user_ids.include?(current_user.id)
+      redirect_to root_path
+    end
   end
 
 end
