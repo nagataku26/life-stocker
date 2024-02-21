@@ -2,6 +2,8 @@ class ItemsController < ApplicationController
   before_action :authenticate_user!
   before_action :list_find
   before_action :item_find, only: [:show, :edit, :update, :destroy]
+  before_action :user_id_verification, only: [:show, :edit, :destroy]
+
 
   def new
     @item = @list.items.new
@@ -48,6 +50,12 @@ class ItemsController < ApplicationController
 
   def item_find
     @item = @list.items.find(params[:id])
+  end
+
+  def user_id_verification
+    unless @list.user_ids.include?(current_user.id)
+      redirect_to root_path
+    end
   end
   
 end
