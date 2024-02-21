@@ -9,34 +9,33 @@
     <div class='edit_form_wrap'>
       <div class="edit_form">
         <div class="form_text">
+          ニックネーム
+        </div>
+        <%= f.text_field :nickname, autofocus: true, autocomplete: "nickname" %>
+
+        <div class="form_text">
           メールアドレス
         </div>
         <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-      </div>
 
-      <div class="edit_form">
         <div class="form_text">
           パスワード<br>(変更しない場合は空白のままにしてください)
         </div>
         <%= f.password_field :password, autocomplete: "new-password" %>
-      </div>
 
-      <div class="edit_form">
         <div class="form_text">
           確認用パスワード<br>(パスワードを変更する場合は入力)
         </div>
         <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-      </div>
 
-      <div class="edit_form">
         <div class="form_text">
           現在のパスワード<br>(アカウント情報を変更するには入力)
         </div>
         <%= f.password_field :current_password, autocomplete: "current-password" %>
-      </div>
 
-      <div class="actions">
-        <%= f.submit "アカウント情報編集" %>
+        <div class="actions">
+          <%= f.submit "アカウント情報編集" %>
+        </div>
       </div>
     </div>
   <% end %>
