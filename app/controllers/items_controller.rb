@@ -12,7 +12,7 @@ class ItemsController < ApplicationController
   def create
     @item = @list.items.new(item_params)
     if @item.save
-      redirect_to list_path(@item.list), notice: 'アイテムが登録されました'
+      redirect_to list_path(@item.list)
     else
       render :new, status: :unprocessable_entity
     end
