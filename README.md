@@ -43,34 +43,36 @@ https://life-stocker.onrender.com
 いざ震災などが起きた際に備えていた物が期限切れで使えないと意味がなく、自分や家族の命に影響が出る可能性がある。  
 そういった経験から、防災意識の向上や防災グッズの期限切れを事前に防ぐために、普段の生活から災害に備えるための手助けとなるアプリケーションを開発することにした。
 
+# 要件定義シート
+https://docs.google.com/spreadsheets/d/1k0h2pBkv0ueYf_zhdeNoqero4gZHzhvexykeNtpcjHE/edit?usp=sharing
+
+
 # 実装した機能
 ## アプリケーション説明ページ
 [![Image from Gyazo](https://i.gyazo.com/21a6ee4195daf14c8c6fd66083c261c3.png)](https://gyazo.com/21a6ee4195daf14c8c6fd66083c261c3)
 ## ユーザー管理機能  
 [![Image from Gyazo](https://i.gyazo.com/f936aec268ad0cd005b09af0b44fad19.jpg)](https://gyazo.com/f936aec268ad0cd005b09af0b44fad19)
 ## 防災グッズリストの自動作成機能(アカウント登録と同時)
-[![Image from Gyazo](https://i.gyazo.com/38debcf2f550dc3b5a268640ef7a2c3f.gif)](https://gyazo.com/38debcf2f550dc3b5a268640ef7a2c3f)
+[![Image from Gyazo](https://i.gyazo.com/16dbf78b5180c82c14b4da7976654e8b.gif)](https://gyazo.com/16dbf78b5180c82c14b4da7976654e8b)
 ## リスト登録機能  
-[![Image from Gyazo](https://i.gyazo.com/a4a047153905787687ae1e308bc00b12.gif)](https://gyazo.com/a4a047153905787687ae1e308bc00b12)
+[![Image from Gyazo](https://i.gyazo.com/84c37778138cbe31037e7fa1033a191c.gif)](https://gyazo.com/84c37778138cbe31037e7fa1033a191c)
 ## アイテム登録機能  
 [![Image from Gyazo](https://i.gyazo.com/2d846431e9f445f90af31f0c1d12d50d.gif)](https://gyazo.com/2d846431e9f445f90af31f0c1d12d50d)
 ## 期限切れアイテムへの期限切れ表示機能
 [![Image from Gyazo](https://i.gyazo.com/7b4d3f7f57f5eccb423bb138efcaab02.png)](https://gyazo.com/7b4d3f7f57f5eccb423bb138efcaab02)
-## 買い物予定リスト（購入予定チェックマークにチェックを入れたアイテムを一覧表示）  
-[![Image from Gyazo](https://i.gyazo.com/3679bc38bdf3233101b0c67f84241a9f.png)](https://gyazo.com/3679bc38bdf3233101b0c67f84241a9f)
+## 購入予定一覧（購入予定チェックマークにチェックを入れたアイテムを一覧表示）  
+[![Image from Gyazo](https://i.gyazo.com/b1aa3ae1cd64ff627892e43abee39a2d.png)](https://gyazo.com/b1aa3ae1cd64ff627892e43abee39a2d)
 ## アイテムへのURL保存機能(保存しているURLへの遷移機能)
 [![Image from Gyazo](https://i.gyazo.com/cd7cdc0160020bc573be3945df2691e6.gif)](https://gyazo.com/cd7cdc0160020bc573be3945df2691e6)
 ## リスト共有機能  
-[![Image from Gyazo](https://i.gyazo.com/2417cd119f13ba7a49be89cee9d8fdb2.gif)](https://gyazo.com/2417cd119f13ba7a49be89cee9d8fdb2)
+[![Image from Gyazo](https://i.gyazo.com/18cf5e5a934e76f183d5f0bf1e29fc6f.gif)](https://gyazo.com/18cf5e5a934e76f183d5f0bf1e29fc6f)
 
 # 実装予定の機能
 今後下記の機能を追加予定  
 ・写真登録時のプレビュー機能  
 ・写真の複数枚の登録機能  
 ・アイテム検索機能  
-・アイテム表示順変更機能  
 ・共有用IDの重複対処(一意性)  
-・アイテムの期限切れ前のメール通知
 ・エラーメッセージ日本語対応  
 ・テストコード記述
 
