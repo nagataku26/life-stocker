@@ -28,7 +28,7 @@ LIFE STOCKER
 2.ログイン後のトップページのリスト参加から、共有用IDと共有用パスワードを入力し、リストに参加する
 
 # アプリケーションを作成した背景
-このアプリケーションを作成するきっかけとなったのは、今年の正月に発生した能登半島地震である。  
+このアプリケーションを作成するきっかけとなったのは、2024年の正月に発生した能登半島地震である。  
 地震発生の際、自分自身は大阪に居たので特に影響はなかったが、義母が新潟に帰省をしていたタイミングであったため、1日だけではあるが避難し避難所で過ごした。  
 身近な人が震災による影響を受けていたことから、自分自身も震災に対する備えを見直すきっかけとなった。  
 自宅に備えていた防災グッズを見直した際に、食料品などが期限切れ間近ということに気づいた。  
@@ -59,15 +59,6 @@ https://docs.google.com/spreadsheets/d/1k0h2pBkv0ueYf_zhdeNoqero4gZHzhvexykeNtpc
 ## リスト共有機能  
 [![Image from Gyazo](https://i.gyazo.com/18cf5e5a934e76f183d5f0bf1e29fc6f.gif)](https://gyazo.com/18cf5e5a934e76f183d5f0bf1e29fc6f)
 
-# 実装予定の機能
-今後下記の機能を追加予定  
-・写真登録時のプレビュー機能  
-・写真の複数枚の登録機能  
-・アイテム検索機能  
-・共有用IDの重複対処(一意性)  
-・エラーメッセージ日本語対応  
-・テストコード記述
-
 # データベース設計
 [![Image from Gyazo](https://i.gyazo.com/f5fc18263e291b981f380decf8692700.png)](https://gyazo.com/f5fc18263e291b981f380decf8692700)
 
@@ -80,13 +71,6 @@ https://docs.google.com/spreadsheets/d/1k0h2pBkv0ueYf_zhdeNoqero4gZHzhvexykeNtpc
 ・インフラ  
 ・テキストエディタ  
 ・タスク管理
-
-# ローカルでの動作方法
-以下のコマンドを順に実行  
-% git clone https://github.com/nagataku26/life-stocker.git  
-% cd life-stocker  
-% bundle install  
-% yarn install
 
 # 工夫したポイント
 工夫した点は以下3点。  
